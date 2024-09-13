@@ -1,0 +1,6 @@
+[submodule "Enalyzer.Api"]
+	path = Enalyzer.Api
+	url = https://github.com/siamaksh1367/Enalyzer.Api
+[submodule "Enalyzer.Web"]
+	path = Enalyzer.Web
+	url = https://github.com/siamaksh1367/Enalyzer.Web
