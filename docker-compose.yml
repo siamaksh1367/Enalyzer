@@ -1,0 +1,29 @@
+services:
+  webapi:
+    build:
+      context: ./Enalyzer.Api/Enalyzer.Api  
+      dockerfile: Dockerfile   
+    hostname: webapi
+    container_name: webapi
+    ports:
+      - "7132:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    networks:
+      - enalyzer-network  
+
+  reactapp:
+    build:
+      context: ./Enalyzer.Web  
+      dockerfile: Dockerfile
+    hostname: reactapp
+    ports:
+      - "5173:5173"
+    networks:
+      - enalyzer-network  
+    environment:
+      VITE_API_URL: http://localhost:7132/api
+
+networks:
+  enalyzer-network:
+    driver: bridge  
